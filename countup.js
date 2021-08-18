@@ -1,3 +1,4 @@
+// SYSTEM FLOW Count up from 0 to selected value
 (() => {
   function animateValue(obj, start, end, duration) {
     let startTimestamp = null;
@@ -13,15 +14,15 @@
   }
 
   const countups = document.querySelectorAll('[data-sysflow-countup]');
-  console.log(countups);
 
   if (countups) {
     countups.forEach((countup) => {
       const obj = countup.querySelector('[data-sysflow-countup-duration]');
-      const end = obj.innerHTML;
       const duration = obj.getAttribute('data-sysflow-countup-duration');
+      const start = obj.getAttribute('data-sysflow-countup-start');
+      const end = obj.innerHTML;
 
-      animateValue(obj, 0, end, duration);
+      animateValue(obj, start, end, duration);
     });
   }
 })();
