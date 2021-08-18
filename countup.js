@@ -19,7 +19,7 @@
     countups.forEach((countup) => {
       const obj = countup.querySelector('[data-sysflow-countup-duration]');
       const duration = obj.getAttribute('data-sysflow-countup-duration');
-      const start = obj.getAttribute('data-sysflow-countup-start');
+      const start = Number(countup.getAttribute('data-sysflow-countup'));
       const end = obj.innerHTML;
 
       animateValue(obj, start, end, duration);
